@@ -17,7 +17,8 @@ import os
 
 app = FastAPI(title="MegaBot", version="1.0.0")
 
-@app.get("/")
+@app.get("/", include_in_schema=False)
+@app.head("/", include_in_schema=False)
 async def root():
     return {"message": "AI Chatbot API is running", "docs": "/docs", "status": "healthy"}
 
