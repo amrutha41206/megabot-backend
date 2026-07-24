@@ -17,6 +17,11 @@ import os
 
 app = FastAPI(title="MegaBot", version="1.0.0")
 
+@app.get("/")
+async def root():
+    return {"message": "AI Chatbot API is running", "docs": "/docs", "status": "healthy"}
+
+
 # ===== RATE LIMITING SETUP =====
 limiter = Limiter(key_func=get_remote_address)
 app.state.limiter = limiter
