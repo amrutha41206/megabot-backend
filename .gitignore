@@ -7,3 +7,4 @@ __pycache__/
 chatbot.db
 logs/
 uploaded_documents/
+chatbot.db
